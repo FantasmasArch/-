@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+<body>
+
+  <script>
+
+    'use strict';
+    let isNum1 = prompt("Введите число", "");
+    document.write(isNum1);
+    let isNum2 = prompt("Введите второе число", "");
+
+    if (isNum1 < isNum2){
+      alert("Первое число меньше второго");
+      document.write(` < ${isNum2}`);
+    };
+    if (isNum1 > isNum2){
+      alert("Первое число больше второго");
+      document.write(` > ${isNum2}`);
+    };
+
+    //второй вариант решения, укороченный
+    var Num = (isNum1 < isNum2) ?
+    `${isNum1} < ${isNum2}`:
+    `${isNum1} > ${isNum2}`;
+    alert(Num);
+    document.write(Num);
+
+  </script>
+
+</body>
+</html>
