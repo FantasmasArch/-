@@ -6,16 +6,20 @@
 <body>
 
   <script>
-
     'use strict';
+    
     let selType = prompt("Введите матерьял обучения (HTML, CSS, JS)", "");
-    if (selType == "HTML") {
-      document.write('<h1 align="center"><i>Добро пожаловать, курс HTML</i></h1>');
-    } else if (selType == "CSS") {
-      document.write('<h1 align="center"><i>Добро пожаловать, курс CSS</i></h1>');
-    } else if (selType == "JS") {
-      document.write('<h1 align="center"><i>Добро пожаловать, курс JS</i></h1>');
-    }
+    switch (selType) {
+      case 'HTML':
+        document.write('<h1 align="center"><i>Добро пожаловать, курс HTML</i></h1>');
+        break;
+      case 'CSS':
+        document.write('<h1 align="center"><i>Добро пожаловать, курс HTML</i></h1>');
+        break;
+      case 'JS':
+        document.write('<h1 align="center"><i>Добро пожаловать, курс HTML</i></h1>');
+        break;
+      }
 
   </script>
 
