@@ -6,38 +6,11 @@
 <body>
 
   <script>
-
     'use strict';
-    let isNum1 = prompt("Введите число", "");
-    document.write(isNum1);
-    let isNum2 = prompt("Введите второе число", "");
-    //первый вариант, через if
-    if (isNum1 < isNum2){
-      alert("Первое число меньше второго");
-      document.write(` < ${isNum2}`);
-    };
-    if (isNum1 > isNum2){
-      alert("Первое число больше второго");
-      document.write(` > ${isNum2}`);
-    };
-    document.write(" ");
-    //второй вариант решения, укороченный, через условный оператор
-    var Num = (isNum1 < isNum2) ?
-    `${isNum1} < ${isNum2}`:
-    `${isNum1} > ${isNum2}`;
-    alert(Num);
-    document.write(Num);
-    document.write(" ");
-
-    //третий вариант, через if else
-    if (isNum1 < isNum2) {
-      alert("первое число меньше второго");
-      document.write(`${isNum1} < ${isNum2}`);
+    let i=1;
+    for (i; i<=10; i++) {
+      document.write(i + "<br />")
     }
-    else{
-      alert("первое число больше второго");
-      document.write(`${isNum1} < ${isNum2}`);
-    };
 
   </script>
 
