@@ -8,21 +8,22 @@
   <script>
 
     'use strict';
-    let isNum1 = prompt("Введите число", "");
-    document.write(isNum1);
-    let isNum2 = prompt("Введите второе число", "");
+    let isNum1 = prompt("Введите число", ""),
+    isNum2 = prompt("Введите второе число", "");
     //первый вариант, через if
-    if (isNum1 < isNum2){
+    if (Number(isNum1) < Number(isNum2)){
       alert("Первое число меньше второго");
-      document.write(` < ${isNum2}`);
+      document.write(`${isNum1} < ${isNum2}`);
     };
-    if (isNum1 > isNum2){
+    if (Number(isNum1) > Number(isNum2)){
       alert("Первое число больше второго");
-      document.write(` > ${isNum2}`);
+      document.write(`${isNum1} > ${isNum2}`);
     };
     document.write("<br />");
+
     //второй вариант решения, укороченный, через условный оператор
-    var Num = (isNum1 < isNum2) ?
+
+    var Num = (Number(isNum1) < Number(isNum2)) ?
     `${isNum1} < ${isNum2}`:
     `${isNum1} > ${isNum2}`;
     alert(Num);
@@ -30,7 +31,8 @@
     document.write("<br />");
 
     //третий вариант, через if else
-    if (isNum1 < isNum2) {
+
+    if (Number(isNum1) < Number(isNum2)) {
       alert("первое число меньше второго");
       document.write(`${isNum1} < ${isNum2}`);
     }
@@ -38,6 +40,20 @@
       alert("первое число больше второго");
       document.write(`${isNum1} < ${isNum2}`);
     };
+
+    document.write("<br />");
+    //четвёртый вариант решения switch case
+
+    switch(Num) {
+      case `${isNum1} < ${isNum2}`:
+        document.write(`${isNum1} < ${isNum2}`);
+        alert('первое число меньше второго');
+      break;
+      case `${isNum1} > ${isNum2}`:
+        document.write(`${isNum1} > ${isNum2}`);
+        alert('первое число больше второго');
+      break;
+    }
 
   </script>
 
