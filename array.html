@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+  <html>
+    <head>
+     <title>array</title>
+     <meta charset="utf-8">
+    </head>
+    <body>
+      <script>
+      'use strict';
+      let days=['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+      document.write(`${days[0]} <br /> ${days[5]} <br />`);
+      //вывести значение массива, на последней позиции
+      alert(days[days.length-1]);
+      //тоже самоё, но через переменную, задающую конкретную позицию, циклы
+      let i=0;
+      alert(days[i]);
+      //добавление значения в массив
+      days[7]= 'Неделя';
+      days[days.length]='Месяц';
+      //способ сразу добавить несколько значений в конец массива
+      days.push('2019', '2020', '2021');
+      alert(days[days.length-1]);
+      //в начало массива
+      days.unshift('Занятия');
+      alert(days[0]);
+      //удалим первое и последнее значение массива
+      days.shift();
+      days.pop();
+      alert(days[days.length-1]);
+
+
+      </script>
+    </body>
+  </html>
