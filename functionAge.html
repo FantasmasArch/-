@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Изучаем функию</title>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <script>
+
+        function checkAge(age) {
+          return (age > 18) || confirm('родители разрешили');
+          //return (age>18) ? true : confirm('родители разрешили');
+          }
+        checkAge(5);
+        function showMin(num1, num2) {
+          return (num1 < num2) ? num1 : num2;
+        }
+        alert(showMin(6, 9));
+
+        function degree(a, b) {
+          let d = a ** b;
+          return d;
+        }
+
+        let degA = prompt('Введите А', ''),
+            degB = prompt('Введите Б', '');
+        (degB<1) ? alert('Введите натуральное число Б') : alert(degree(degA, degB))
+      </script>
+    </body>
+  </html>

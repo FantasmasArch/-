@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Изучаем функию</title>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <script>
+        //создадим функцию вывода сообщения
+        //функция имеет доступ к переменным из вне
+        'use strict';
+        function showMassege(name){
+          alert('Привет,' + name);
+        }
+        showMassege('Тупик');
+        // //функии можно задать значение по умолчанию
+
+        function showMessage(from="Тёма", text="ХЗ") { // аргументы: from, text
+          alert(from + ': ' + text);
+          }
+
+          showMessage('Аня', 'Привет!'); // Аня: Привет! (*)
+          showMessage('Аня', "Как дела?"); // Аня: Как дела? (**)
+          showMessage();
+        //возврат значения через ruturn
+        function getSum(a, b){
+          return a+b;
+        }
+        let e=+prompt('e', ''),
+            c=+prompt('c', ''),
+            result = getSum(e, c);
+        alert(result);
+      </script>
+    </body>
+  </html>
