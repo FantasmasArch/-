@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Изучаем функию</title>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <script>
+      //экспрессия функии, редкий способ обьявления функции
+      //экспресивную функцию можно использовать только после её обьявления, в отличии от деклорированной
+      //экспресивная функция позволяет обходить ограничение 'use strict'; которое накладывает ограничение
+      //функция созданная в теле {}, не существует вне его
+      //ещё один способ обоити данное ограничение условный оператор ?
+      let getHi = function(){
+        alert('Hi');
+      }
+      getHi();
+      //функия калбэк
+      function askAge(question, yes, no){
+        //if (confirm(question)) yes()
+        //else no();
+        confirm(question) ? yes() : no();
+      }
+
+      function showYes(){
+        alert('Да, мама разрешила');
+      }
+      function showNo(){
+        alert('Нет, иди поговори с мамой');
+      }
+
+      askAge('Мама разрешила?', showYes, showNo);
+
+      //анонимная функция, анонимня функция существует только внутри функции,
+      //анонимные функии позволяют писать код короче.
+      askAge(
+        'Ок?',
+        function(){alert('Ok!');},
+        function(){alert('No!');}
+      )
+
+      //функция стрелка (пример)
+      let sum = (a, b) => a + b;
+      alert(sum(3, 5));
+
+      let double = (a) => a * 2;
+      alert(double(6));
+
+      //функция стрелка, как функция экспрессия
+      let age = prompt('Сколько вам лет','');
+      let checkAge = (age > '18') ?
+        ()=>alert('Добро пожаловать в клуб'):
+        ()=>alert('Вам ещё рано');
+
+      checkAge();
+
+
+      let checkAsk = (question, yes, no) => confirm(question) ? alert(yes) : alert(no);
+
+      checkAsk("Вы согласны?", "Да", "Нет");
+
+
+
+
+
+      </script>
+    </body>
+  </html>
