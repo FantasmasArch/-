@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Изучаем методы строк и чисес</title>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <script>
+      const myText = 'Привет, это эксперементальная строка';
+      //преобруем её в верхний регистр
+      console.log(myText.toUpperCase());
+      //преобразуем в нижний регистр
+      console.log(myText.toLowerCase());
+      //попробуем узнать наличие фрагмента в тексте и его позицию
+      console.log(myText.indexOf('строка'));
+      //воспользуемся методом slice
+      console.log(myText.slice(8, 11));
+      //методом slice с обратной стороны без задания лимита
+      console.log(myText.slice(-6));
+      //метод substring
+      console.log(myText.substring(8, 11));
+      //метод substr отличается от slice, тем что нарезает нужное количество символов
+      console.log(myText.substr(12, 17));
+
+      //методы чисел с помощью библиотеки Math
+      let num = 12.2;
+      //округление
+      console.log(Math.round(num));
+      //методы позволяющие убрать всё лишнее из строки и преобразовать её в число
+      let anotherText = '100.5px';
+      console.log(parseInt(anotherText));
+      console.log(parseFloat(anotherText));
+      //теперь ты умеешь резать строки и производить математические методы.
+
+      </script>
+    </body>
+  </html>
