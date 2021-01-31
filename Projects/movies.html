@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Киноблог</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+'use strict';
+
+let numberOfFilms;
+
+start();
+
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+console.log(numberOfFilms);
+console.log(personalMovieDB);
+
+for (let i = 0; i < 2; i++) {
+    writeYourFilm();
+  }
+
+userLevel()
+writeYourGenres();
+showMyDB();
+
+function start() {
+  numberOfFilms = +prompt('сколько фильмов вы уже посмотрели?', '');
+  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt('сколько фильмов вы уже посмотрели?', '');
+  }
+}
+
+
+function userLevel() {
+  if ( personalMovieDB.count >=0 && personalMovieDB.count < 10 ) {
+    alert('просмотрено мало фильмов, посмотрите ещё.');
+  } else if ( personalMovieDB.count >= 10 && personalMovieDB.count < 20 ) {
+    alert('отлично вы начинающий киноман.');
+  } else if (personalMovieDB.count >= 20) {
+    alert('вы киноман!')
+  } else {
+    alert('Произошла ошибка!');
+  }
+}
+
+function showMyDB () {
+    personalMovieDB.privat === false ? console.log(personalMovieDB) : console.log('deny');
+}
+
+//TODO: i = personalMovieDB.genres.length; i < 1; i++
+function writeYourGenres(){
+  for (let i = 0; i < 3; i++){
+    personalMovieDB.genres[i] = prompt(`Добавьте предпочтительный жанр кино под номером ${i + 1}`, '');
+  }
+}
+
+//BUG
+function rateYourFilm() {
+  let rate = prompt('На сколько вы оцените данный фильм?', '');
+  return rate;
+}
+
+function writeYourFilm() {
+  let titleMovie = prompt('Какой фильм вы посмотрели?', '');
+    (titleMovie != null && titleMovie != '' && titleMovie.length < 50) ?
+    personalMovieDB.movies[titleMovie] = rateYourFilm() &
+    console.log('done'):
+    console.log('error');
+}
+
+
+    </script>
+  </body>
+</html>
