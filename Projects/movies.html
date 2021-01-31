@@ -23,11 +23,8 @@ let personalMovieDB = {
 console.log(numberOfFilms);
 console.log(personalMovieDB);
 
-for (let i = 0; i < 2; i++) {
-    writeYourFilm();
-  }
-
-userLevel()
+writeYourFilm();
+userLevel();
 writeYourGenres();
 showMyDB();
 
@@ -45,7 +42,7 @@ function userLevel() {
   } else if ( personalMovieDB.count >= 10 && personalMovieDB.count < 20 ) {
     alert('отлично вы начинающий киноман.');
   } else if (personalMovieDB.count >= 20) {
-    alert('вы киноман!')
+    alert('вы киноман!');
   } else {
     alert('Произошла ошибка!');
   }
@@ -56,24 +53,27 @@ function showMyDB () {
 }
 
 //TODO: i = personalMovieDB.genres.length; i < 1; i++
-function writeYourGenres(){
-  for (let i = 0; i < 3; i++){
+function writeYourGenres() {
+  for (let i = 0; i < 3; i++) {
     personalMovieDB.genres[i] = prompt(`Добавьте предпочтительный жанр кино под номером ${i + 1}`, '');
   }
 }
 
-//BUG
-function rateYourFilm() {
-  let rate = prompt('На сколько вы оцените данный фильм?', '');
-  return rate;
-}
+// //BUG
+// function rateYourFilm() {
+//   let rate = prompt('На сколько вы оцените данный фильм?', '');
+//   return rate;
+// }
 
 function writeYourFilm() {
+  for (let i = 0; i < 2; i++) {
   let titleMovie = prompt('Какой фильм вы посмотрели?', '');
     (titleMovie != null && titleMovie != '' && titleMovie.length < 50) ?
-    personalMovieDB.movies[titleMovie] = rateYourFilm() &
+    personalMovieDB.movies[titleMovie] = prompt('На сколько вы оцените данный фильм?', '') &
     console.log('done'):
-    console.log('error');
+    console.log('error') &
+    i--;
+    }
 }
 
 
