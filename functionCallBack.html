@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Изучаем функию</title>
+      <meta charset="utf-8">
+    </head>
+    <body>
+      <script>
+      //первая функция вызывающая коллбэк
+      function logLearnLang(text, callback) {
+        console.log(`Я учу: ${text}`);
+        callback();
+      }
+      //вторая функция вызываемая через колбек
+      function showOk() {
+        console.log('Ok!');
+      }
+      //проверка результата
+      logLearnLang('JS - ECMAscript', showOk)
+
+      </script>
+    </body>
+  </html>
