@@ -65,6 +65,7 @@ let page = {
   width: '1920',
   heigth: '1020',
   tittle: 'обычная страница',
+  'body text': 'какой то текстк',
   colors: {
     font: 'black',
     background: 'red',
@@ -85,6 +86,15 @@ let {font, background, head} = page.colors;
 console.log(font);
 console.log(background);
 console.log(head);
+
+let thing = "table";
+let house = {
+  [thing]: 10,
+};
+
+house["room"] = true;
+alert("table" in house);
+console.log(house);
 
   </script>
 
