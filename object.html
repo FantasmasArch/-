@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+<body>
+
+  <script>
+  'use strict';
+
+  let user = {
+    name: '',
+    surname: '',
+    age: '',
+    gender: '',
+    career: {
+      profession: '',
+      experions: '',
+      skill: '',
+    },
+    //создать свой метод:
+    makeTest: function() {
+      console.log('Done');
+    }
+  };
+
+  user.name = prompt('Как вас зовут?', '');
+  user.surname = prompt('Ваша фамилия?', '');
+  user.age = prompt('Сколько вам лет?', '');
+  user.gender = prompt('Ваш пол?', '');
+  user.career.profession = prompt('Ваша профессия?', '');
+  user.career.experions = prompt('Ваш стаж?', '');
+  user.career.skill = prompt('Ваш основной навык?', '');
+
+ //удаление значения из обьекта
+  delete user.gender;
+
+  // перебор значений массива;
+  for (let key in user) {
+    //для обьекта в обьекте
+    if (typeof(user[key]) !== 'object') {
+      console.log(`${key} : ${user[key]}`);
+    } else {
+      for (let i in user.career) {
+        console.log(`${i} : ${user.career[i]}`);
+      }
+    }
+  }
+
+  //узщнаём длин обекта через ключ .keys и ключ массива .length
+  console.log(Object.keys(user).length);
+  user.makeTest();
+
+  //дуструкторизация обьекта, позваляет присвоить значению обьекта переменную,
+  // с которой потом удобно работать
+  let {profession, experions, skill} = user.career;
+  console.log(profession);
+
+
+
+//практика
+//создать обьект page поместить в него три своиства и один обьект, проработать
+
+let page = {
+  width: '1920',
+  heigth: '1020',
+  tittle: 'обычная страница',
+  colors: {
+    font: 'black',
+    background: 'red',
+    head: 'blue',
+  },
+  loadTest: function() {
+    console.log('test done');
+  }
+};
+
+page.loadTest();
+
+console.log(Object.keys(page));
+console.log(Object.keys(page).length);
+
+let {font, background, head} = page.colors;
+
+console.log(font);
+console.log(background);
+console.log(head);
+
+  </script>
+
+</body>
+</html>
