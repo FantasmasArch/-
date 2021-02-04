@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>object options sum</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+
+let testObject = {
+  option_1: 100,
+  option_2: 200,
+  option_3: 350,
+  option_4: 120,
+};
+let sum = 0;
+
+function sumOpt(obj) {
+  for (let key in obj) {
+    sum += obj[key];
+  }
+}
+
+sumOpt(testObject);
+console.log(sum);
+
+    </script>
+  </body>
+</html>
