@@ -24,6 +24,30 @@ function sumOpt(obj) {
 sumOpt(testObject);
 console.log(sum);
 
+let testObject_2 = {
+  option_1: 100,
+  option_2: 200,
+  option_3: 'NaN',
+  option_4: 'NaN',
+};
+
+console.log(testObject_2);
+
+function multiplyNumeric(obj) {
+  for (let opt in obj) {
+    if (typeof(obj[opt]) == 'number') {
+      obj[opt] *= 2;
+    }
+  }
+}
+
+multiplyNumeric(testObject_2);
+console.log(testObject_2);
+
+
+
+
+
     </script>
   </body>
 </html>
