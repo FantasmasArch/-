@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>object null check</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+
+function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('введите число', '');
+  };
+}
+
+let accum = new Accumulator(1);
+
+
+console.log(accum);
+
+accum.read();
+accum.read();
+console.log(accum);
+
+    </script>
+  </body>
+</html>
