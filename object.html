@@ -8,10 +8,14 @@
     <script>
 
 let testObject = {
-  //  option_1: 'red',
-  // option_2: 'yellow',
-  // option_3: 'blue',
-  // option_4: 'black',
+  option_1: 'red',
+  option_2: 'yellow',
+  option_3: 'blue',
+  option_4: 'black',
+  option_5: {
+    subOption_1: 'big',
+    subOption_2: 'little',
+  },
 };
 
 function isEmpty(obj) {
@@ -23,6 +27,36 @@ function isEmpty(obj) {
 
 alert(isEmpty(testObject));
 
+console.log(testObject);
+
+//методы копирования обьекта
+let newObject = testObject;
+console.log(newObject);
+//таким методом
+newObject === testObject; //== /true
+
+//метод Object.assign()
+let clone = {};
+Object.assign(clone, testObject);
+console.log(clone);
+// через Object.assign !=, так же можно записать множество обьектов в один.
+//для вложенного клонирования нужно запустить перебор свойств с проверкой на обьект
+
+let clone_2 = {};
+
+//TODO
+for (let key in testObject ) {
+  if (typeof(testObject[key]) === 'object') {
+    for (let i in testObject[key]) {
+      clone_2[key] = testObject[key];
+      clone_2[key][i] = testObject[key][i]
+    }
+  } else {
+    clone_2[key] = testObject[key];
+  }
+}
+
+console.log(clone_2);
 
     </script>
   </body>
