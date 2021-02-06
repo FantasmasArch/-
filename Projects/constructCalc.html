@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>object null check</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+
+function Calc() {
+  this.numA = '';
+  this.numB = '';
+  this.result = '';
+
+  this.read = function() {
+    this.numA = +prompt('введите первое число', '');
+    this.numB = +prompt('введите второе число', '');
+  };
+  this.sum = function() {
+    this.result = this.numA + this.numB;
+    console.log(this.result);
+  };
+  this.mul = function() {
+    this.result = this.numA * this.numB;
+    console.log(this.result);
+  };
+}
+
+let calc = new Calc();
+
+
+console.log(calc);
+calc.read();
+console.log(calc);
+calc.sum();
+calc.mul();
+
+    </script>
+  </body>
+</html>
