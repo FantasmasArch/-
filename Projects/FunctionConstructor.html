@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>function constructor</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+    // name - string, password - string, isAdmin - boolean
+
+
+function askName() {
+    let questName = prompt('Введите имя пользователя', '');
+    while ( questName == null || questName == '' ) {
+      questName = prompt('Введите имя пользователя ещё раз, имя не может быть пустым');
+    }
+    return questName;
+  }
+
+function setPass() {
+  let pass = prompt('Установите пароль', '');
+  while ( pass.length < 8 ) {
+    pass = prompt('Пароль слишком короткий', '');
+  }
+  return pass;
+}
+
+function User(name = askName(), password = setPass(), isAdmin = false) {
+  this.name = name;
+  this.password = password;
+  this.isAdmin = isAdmin;
+}
+
+let usersDB = {};
+
+for (let i = 0; i < 3; i++ ) {
+  usersDB[`user + ${i}`] = new User();
+}
+
+console.log(usersDB);
+
+    </script>
+  </body>
+</html>

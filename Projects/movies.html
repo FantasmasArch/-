@@ -67,12 +67,14 @@ function writeYourGenres() {
 
 function writeYourFilm() {
   for (let i = 0; i < 2; i++) {
-  let titleMovie = prompt('Какой фильм вы посмотрели?', '');
-    (titleMovie != null && titleMovie != '' && titleMovie.length < 50) ?
-    personalMovieDB.movies[titleMovie] = prompt('На сколько вы оцените данный фильм?', '') &
-    console.log('done'):
-    console.log('error') &
-    i--;
+    let titleMovie = prompt('Какой фильм вы посмотрели?', '');
+      if (titleMovie != null && titleMovie != '' && titleMovie.length < 50) {
+        personalMovieDB.movies[titleMovie] = prompt('На сколько вы оцените данный фильм?', '');
+        console.log('done');
+      } else {
+        console.log('error');
+        i--;
+      }
     }
 }
 
