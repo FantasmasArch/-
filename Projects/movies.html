@@ -8,33 +8,26 @@
     <script>
 'use strict';
 
-let numberOfFilms;
-
-start();
-
 let personalMovieDB = {
-    count: numberOfFilms,
+    count: "",
     movies: {},
     actors: {},
     genres: [],
     privat: false
 };
 
-console.log(numberOfFilms);
-console.log(personalMovieDB);
-
+start();
 writeYourFilm();
 userLevel();
 writeYourGenres();
 showMyDB();
 
 function start() {
-  numberOfFilms = +prompt('сколько фильмов вы уже посмотрели?', '');
-  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt('сколько фильмов вы уже посмотрели?', '');
+  personalMovieDB.count = +prompt('сколько фильмов вы уже посмотрели?', '');
+  while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+    personalMovieDB.count = +prompt('сколько фильмов вы уже посмотрели?', '');
   }
 }
-
 
 function userLevel() {
   if ( personalMovieDB.count >=0 && personalMovieDB.count < 10 ) {
