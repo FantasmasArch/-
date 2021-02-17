@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+function truncate(str, max_length) {
+  return (str.length > max_length) ? str.substr(0, max_length - 3) + "..." :
+    str;
+}
+
+let stroka = 'привет, эта длинная строка';
+console.log(stroka.length);
+console.log(truncate('привет, это длинная строка', 9));
+    </script>
+  </body>
+</html>
