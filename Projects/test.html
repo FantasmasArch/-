@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+function checkSpm(str) {
+  let spam = ['viagra', 'xxx'];
+  for (let i = 0; i < spam.length ; i++) {
+    switch (str.toLowerCase().includes(spam[i])) {
+      case true:
+        return true;
+      case false:
+        continue;
+    }
+  }
+  return false;
+}
+
+console.log(checkSpm('ViAG'));
+    </script>
+  </body>
+</html>
