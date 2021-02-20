@@ -16,8 +16,8 @@ function sumInput() {
   }
 
   let sum = 0;
-  for (let option in numbers) {
-    sum += +option;
+  for (let option of numbers) {
+    sum += option;
   }
   return sum;
 }
