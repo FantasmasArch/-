@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+let arr = [-4, -3, -2, - 1, -0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    arrS = [ -15, 9, -2, 3, 4, -5, 1],
+    arrB = ["HTML", "JavaScript", "CSS"];
+
+alert(arrS.sort( (a, b) => -(a - b) ));
+
+function copySorted(arr) {
+  return arr.slice().sort();
+}
+
+let copyArr = copySorted(arrB);
+console.log(copyArr);
+
+
+
+
+    </script>
+  </body>
+</html>
