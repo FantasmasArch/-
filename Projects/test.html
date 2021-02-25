@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function unique(arr) {
+        let unique = [];
+
+        for (let str of arr) {
+          if (!unique.includes(str)) {
+            unique.push(str);
+          }
+        }
+        return unique;
+      }
+
+      let strings = ["кришна", "кришна", "харе", "харе",
+        "харе", "харе", "кришна", "кришна", ":-O"
+      ];
+
+      alert( unique(strings) ); // кришна, харе, :-O
+    </script>
+  </body>
+</html>
