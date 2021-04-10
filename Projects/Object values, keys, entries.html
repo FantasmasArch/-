@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+// let user = {
+//   name: 'John',
+//   age: '30'
+// };
+//
+// alert(Object.keys(user));
+// alert(Object.values(user));
+// alert(Object.entries(user));
+//
+// for (let enter of Object.entries(user)) {
+//   alert(enter);
+// }
+//
+// let prices = {
+//   banana: 30,
+//   orange: 20,
+//   potato: 10,
+// };
+//
+// let doublePrices = Object.fromEntries(
+//   Object.entries(prices).map(([key, value]) => [key, value * 2 + 5])
+// );
+//
+// alert(doublePrices.potato);
+
+let salaries = {
+  "John": 40,
+  "Pete": 30,
+  "Mary": 20
+};
+
+alert( sumSalaries(salaries) );
+
+function sumSalaries(obj) {
+  // let sum = 0;
+  // for (let solary of Object.values(obj)) {
+  //   sum += solary;
+  // }
+  // return sum;
+
+  return Object.values(obj).reduce((a, b) => a + b, 0);
+}
+
+function count(obj) {
+  return Object.keys(obj).length;
+}
+
+alert( count(salaries));
+
+
+    </script>
+  </body>
+</html>

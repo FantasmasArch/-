@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+let student = {
+  name: 'Vasya',
+  age: 32,
+  isAdmin: false,
+  curses: 'JS, Angular, Vue, React',
+  wife: true
+}
+
+let json = JSON.stringify(student);
+alert(json);
+
+alert(JSON.stringify(1));
+alert(JSON.stringify(true));
+alert(JSON.stringify("yes"));
+alert(JSON.stringify(null));
+
+let user = {
+  sayHi() {
+    alert('Hi!');
+  },
+  [Symbol ("id")]: 123,
+  something: undefined
+}
+
+alert(JSON.stringify(user));
+
+//let json = JSON.stringife(value[, replacer, space])
+
+let room = {
+    number: 22,
+    toJSON() {
+      return this.number;
+    }
+}
+
+let meetup = {
+  title: "Conference",
+  parlicipants: [{name: "John"}, {name: "Gay"}],
+  room,
+  //toJSON()
+  date: new Date(Date.UTC(2020, 0, 1))
+}
+
+room.occupiedBy = meetup;
+
+//alert(JSON.stringify(meetup, ['title', 'parlicipants', 'place', 'name', 'number']));
+alert(JSON.stringify(meetup, function replacer(key, value) {
+//  alert(`${key}: ${value}`);
+  return (key == 'occupiedBy') ? undefined : value;
+}, 2))
+
+// let value = JSON.parse(str, [reviver])
+
+let admin = '{ "name": "John", "age": 35, "isAdmin": true, "friends": [0,1,2,3] }';
+admin = JSON.parse(admin);
+alert(admin.friends[3]);
+
+let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+str = JSON.parse(str, function(key, value) {
+  if (key == 'date') return new Date(value);
+  return value;
+})
+
+alert(str.date.getDate());
+
+    </script>
+  </body>
+</html>
