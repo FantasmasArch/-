@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+// function sayHiBye(firstName, surName) {
+//
+//   function getName() {
+//     return firstName + " " + surName;
+//   }
+//
+//   alert("Hello," + getName());
+//   alert("Bye, " + getName());
+//
+// }
+//
+// sayHiBye('Михаил', 'Шумихин');
+//
+// function User(name) {
+//
+//   this.sayHi = function() {
+//     alert(name);
+//   };
+// }
+//
+// let user = new User('John');
+// user.sayHi();
+//
+// function makeCounter() {
+//   let counter = 0;
+//
+//   return function() {
+//     return counter++;
+//   };
+// }
+//
+//
+// let counter1 = makeCounter();
+// let counter2 = makeCounter();
+//
+// alert(counter1());
+// alert(counter1());
+// alert(counter1());
+// alert(counter2());
+// alert(counter2());
+//
+// function sum(a) {
+//   return function(b) {
+//     return a + b;
+//   };
+// }
+//
+// alert(sum(2)(3));
+// alert(sum(8)(-10));
+//
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//
+// function inBetween(a, b) {
+//   return function(x) {
+//     return x >= a && x <= b;
+//   };
+// }
+//
+// function inArray(arr) {
+//   return function(x) {
+//     return arr.includes(x);
+//   };
+// }
+//
+//
+// alert(arr.filter(inBetween(4, 6)));
+// alert(arr.filter(inArray([1, 2, 15])));
+
+let user = [
+  {name: "John", age: 32, surname: "Kap"},
+  {name: "Amanda", age: 33, surname: "Blum"},
+  {name: "Ember", age: 25, surname: "Kurt"}
+];
+
+function byField(field) {
+  return function(a, b) {
+    return a[field] > b[field] ? 1 : -1;
+  };
+}
+
+user.sort(byField('name'));
+user.forEach(user => alert(user.name));
+
+user.sort(byField('surname'));
+user.forEach(user => alert(user.surname));
+
+user.sort(byField('age'));
+user.forEach(user => alert(user.age));
+
+
+
+    </script>
+  </body>
+</html>
